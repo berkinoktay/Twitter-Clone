@@ -4,15 +4,15 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          base: 'hsl(203, 89%, 53%)',
-          darken: 'hsl(203, 89%, 40%)',
-          lighten: 'hsl(203, 89%, 90%)',
+          base: '#1C9BEF',
+          darken: '#188CD8',
+          lighten: 'hsl(203, 89%, 96%)',
         },
         secondary: {
           black: '#14171A',
           darkGray: '#657786',
           lightGray: '#AAB8C2',
-          extraLightGray: '#E1E8ED',
+          extraLightGray: '#E7E7E8',
           lightestGray: '#eff3f4',
         },
       },
