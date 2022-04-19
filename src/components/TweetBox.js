@@ -1,15 +1,43 @@
 import { useState } from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
-import { ImageIcon, GIFIcon, PollIcon, EmojiIcon, ScheduleIcon } from './icons';
+import CounterContainer from './CounterContainer';
+import {
+  ImageIcon,
+  GIFIcon,
+  PollIcon,
+  EmojiIcon,
+  ScheduleIcon,
+  PlusIcon,
+} from './icons';
 const TweetBox = () => {
   const [formText, setFormText] = useState('');
+  const [counter, setCounter] = useState(0);
+
+  const styleRing = () => {
+    const characterLimit = 280;
+    const characterLeft = characterLimit - counter;
+    const r = characterLeft <= 20 ? 14 : 9;
+
+    const circleLength = 2 * Math.PI * r;
+    const colored = (circleLength * counter) / characterLimit;
+    const gray = circleLength - colored;
+    return {
+      colored,
+      gray,
+      characterLeft,
+      r,
+    };
+  };
   return (
     <div className="flex flex-1 flex-col items-start px-3">
       <TextareaAutosize
         placeholder="What's happening?"
         className="pt-3 w-full resize-none h-auto overflow-hidden bg-transparent outline-none text-xl placeholder:text-secondary-darkGray placeholder:text-xl"
         minRows={2}
-        onChange={(e) => setFormText(e.target.value)}
+        onChange={(e) => {
+          setFormText(e.target.value);
+          setCounter(e.target.value.length);
+        }}
         value={formText}
       ></TextareaAutosize>
       <div className="w-full flex items-center justify-between">
@@ -30,12 +58,17 @@ const TweetBox = () => {
             <ScheduleIcon className="w-5 h-5" />
           </div>
         </div>
-        <button
-          className="bg-primary-base text-white opacity-100 font-bold text-base px-4 py-2 rounded-full hover:bg-primary-darken disabled:opacity-50 transform transition-colors duration-300"
-          disabled={!formText}
-        >
-          Tweet
-        </button>
+        <div className="flex items-center">
+          {counter > 0 && (
+            <CounterContainer counter={counter} styleRing={styleRing} />
+          )}
+          <button
+            className="px-4 py-2 ml-3 bg-primary-base text-white opacity-100 font-bold text-base  rounded-full hover:bg-primary-darken disabled:opacity-50 transform transition-colors duration-300"
+            disabled={!formText}
+          >
+            Tweet
+          </button>
+        </div>
       </div>
     </div>
   );

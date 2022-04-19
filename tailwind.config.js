@@ -16,6 +16,18 @@ module.exports = {
           lightestGray: '#eff3f4',
           hoverGray: '#F7F7F7',
         },
+        tweetFooter: {
+          primary: {
+            blue: 'rgb(29,155,240)',
+            green: 'rgb(0,186,124)',
+            red: 'rgb(249,24,128)',
+          },
+          secondary: {
+            blue: 'rgba(29,155,240, 0.1)',
+            green: 'rgba(0,186,124,0.1)',
+            red: 'rgba(249,24,128,0.1)',
+          },
+        },
       },
     },
   },

@@ -1,5 +1,8 @@
 import React from 'react';
+
+import { ReplyIcon, ReTweetIcon, LikeIcon, ShareIcon } from './icons';
 import ProfilePicture from '../img/profilePicture.jpeg';
+import BlowMind from '../img/blow-mind.gif';
 const FeedItem = () => {
   return (
     <div className="flex items-start py-3 px-4 cursor-pointer hover:bg-secondary-hoverGray ">
@@ -20,12 +23,44 @@ const FeedItem = () => {
           <span> · </span>
           <time>1h</time>
         </div>
-        <div className="text-sm text-secondary-black">
+        <p className="text-sm text-secondary-black">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia
           incidunt reiciendis voluptatem dolor voluptatum? Nihil tempore nam
           cupiditate ipsum modi a, recusandae excepturi in, labore molestias
           magnam deserunt doloremque natus.
-        </div>
+        </p>
+        <img src={BlowMind} alt="" className="max-h-96 mt-3 rounded-xl" />
+        <ul className="pt-3 flex items-center justify-between w-full max-w-md">
+          <li className="flex items-center group text-secondary-darkGray">
+            <div className="w-9 h-9 flex items-center justify-center rounded-full group-hover:bg-tweetFooter-secondary-blue">
+              <ReplyIcon className="w-5 h-5 group-hover:text-tweetFooter-primary-blue" />
+            </div>
+            <span className="px-3 text-sm group-hover:text-tweetFooter-primary-blue">
+              22
+            </span>
+          </li>
+          <li className="flex items-center group text-secondary-darkGray">
+            <div className="w-9 h-9 flex items-center justify-center rounded-full group-hover:bg-tweetFooter-secondary-green">
+              <ReTweetIcon className="w-5 h-5 group-hover:text-tweetFooter-primary-green" />
+            </div>
+            <span className="px-3 text-sm group-hover:text-tweetFooter-primary-green">
+              91
+            </span>
+          </li>
+          <li className="flex items-center group text-secondary-darkGray">
+            <div className="w-9 h-9 flex items-center justify-center rounded-full group-hover:bg-tweetFooter-secondary-red">
+              <LikeIcon className="w-5 h-5 group-hover:text-tweetFooter-primary-red" />
+            </div>
+            <span className="px-3 text-sm group-hover:text-tweetFooter-primary-red">
+              2,345
+            </span>
+          </li>
+          <li className="flex items-center group text-secondary-darkGray">
+            <div className="w-9 h-9 flex items-center justify-center rounded-full group-hover:bg-tweetFooter-secondary-blue">
+              <ShareIcon className="w-5 h-5 group-hover:text-tweetFooter-primary-blue" />
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   );
