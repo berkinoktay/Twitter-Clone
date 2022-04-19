@@ -14,6 +14,7 @@ module.exports = {
           lightGray: '#AAB8C2',
           extraLightGray: '#E7E7E8',
           lightestGray: '#eff3f4',
+          hoverGray: '#F7F7F7',
         },
       },
     },

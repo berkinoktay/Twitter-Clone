@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer utilities {
+  .imgShadow {
+    box-shadow: rgba(0, 0, 0, 0.03) 0px 0px 2px inset;
+  }
+  .imgBackground {
+    background-color: rgba(26, 26, 26, 0.15);
+  }
+}

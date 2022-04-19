@@ -1,15 +1,29 @@
-import React from 'react';
-
-const Sidelink = ({ title, Icon, path }) => {
+import { NavLink } from 'react-router-dom';
+const Sidelink = ({
+  title,
+  Icon,
+  IconSelected,
+  path,
+  activeMenu,
+  setActiveMenu,
+}) => {
   return (
-    <li className="group">
-      <a href={path} className="block text-secondary-black">
+    <li className="group" onClick={() => setActiveMenu(title)}>
+      <NavLink
+        to={path}
+        className={({ isActive }) =>
+          isActive
+            ? 'block text-secondary-black font-bold'
+            : 'block text-secondary-black'
+        }
+      >
         <div className="inline-block">
           <div className="flex items-center group-hover:bg-secondary-extraLightGray p-3 rounded-full transform transition-colors duration-150">
-            <Icon /> <span className="text-xl ml-5 mr-4">{title}</span>
+            {activeMenu !== title ? <Icon /> : <IconSelected />}{' '}
+            <span className="text-xl ml-5 mr-4">{title}</span>
           </div>
         </div>
-      </a>
+      </NavLink>
     </li>
   );
 };

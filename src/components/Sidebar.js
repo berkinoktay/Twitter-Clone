@@ -1,17 +1,23 @@
-import React from 'react';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { MENU } from '../constants';
 import Sidelink from './Sidelink';
 import { TwitterIcon, DotsIcon } from './icons';
 import ProfilePicture from '../img/profilePicture.jpeg';
 const Sidebar = () => {
+  const [activeMenu, setActiveMenu] = useState('Home');
   return (
-    <div className="w-72 flex flex-col justify-between px-3">
+    <div className="sticky top-0 w-72 flex flex-col justify-between px-3 h-screen">
       <div>
-        <a href="#/" className="inline-block">
+        <Link
+          to="/"
+          className="inline-block"
+          onClick={() => setActiveMenu('Home')}
+        >
           <div className="w-12 h-12 flex justify-center items-center rounded-full transform transition-colors duration-200 hover:bg-primary-lighten ">
             <TwitterIcon />
           </div>
-        </a>
+        </Link>
 
         <nav>
           <ul>
@@ -20,7 +26,10 @@ const Sidebar = () => {
                 key={link.key}
                 title={link.title}
                 Icon={link.icon}
+                IconSelected={link.iconSelected}
                 path={link.path}
+                activeMenu={activeMenu}
+                setActiveMenu={setActiveMenu}
               />
             ))}
           </ul>
