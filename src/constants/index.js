@@ -87,3 +87,66 @@ export const MENU = [
     notify: 0,
   },
 ];
+
+export const trends = [
+  {
+    name: '#javascript',
+    url: 'https://twitter.com/hashtag/javascript?src=hash',
+    tweetCount: '1.2k',
+    tweetCountText: 'tweets',
+  },
+  {
+    name: '#reactjs',
+    url: 'https://twitter.com/hashtag/reactjs?src=hash',
+    tweetCount: '50.232',
+    tweetCountText: 'tweets',
+  },
+  {
+    name: '#reactnative',
+    url: 'https://twitter.com/hashtag/reactnative?src=hash',
+    tweetCount: '2.43k',
+    tweetCountText: 'tweets',
+  },
+  {
+    name: '#html',
+    url: 'https://twitter.com/hashtag/html?src=hash',
+    tweetCount: '2.2k',
+    tweetCountText: 'tweets',
+  },
+  {
+    name: '#javascript',
+    url: 'https://twitter.com/hashtag/javascript?src=hash',
+    tweetCount: '1.2k',
+    tweetCountText: 'tweets',
+  },
+  {
+    name: '#reactjs',
+    url: 'https://twitter.com/hashtag/reactjs?src=hash',
+    tweetCount: '50.232',
+    tweetCountText: 'tweets',
+  },
+  {
+    name: '#reactnative',
+    url: 'https://twitter.com/hashtag/reactnative?src=hash',
+    tweetCount: '2.43k',
+    tweetCountText: 'tweets',
+  },
+  {
+    name: '#html',
+    url: 'https://twitter.com/hashtag/html?src=hash',
+    tweetCount: '2.2k',
+    tweetCountText: 'tweets',
+  },
+  {
+    name: '#javascript',
+    url: 'https://twitter.com/hashtag/javascript?src=hash',
+    tweetCount: '1.2k',
+    tweetCountText: 'tweets',
+  },
+  {
+    name: '#reactjs',
+    url: 'https://twitter.com/hashtag/reactjs?src=hash',
+    tweetCount: '50.232',
+    tweetCountText: 'tweets',
+  },
+];

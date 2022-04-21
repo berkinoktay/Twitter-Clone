@@ -15,6 +15,7 @@ module.exports = {
           extraLightGray: '#E7E7E8',
           lightestGray: '#eff3f4',
           hoverGray: '#F7F7F7',
+          trendsColor: '#f7f9f9',
         },
         tweetFooter: {
           primary: {

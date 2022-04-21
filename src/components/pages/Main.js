@@ -5,7 +5,7 @@ import TweetBox from '../TweetBox';
 import FeedList from '../FeedList';
 const Main = () => {
   return (
-    <main className="flex-1 border-x border-secondary-lightestGray mr-10">
+    <main className="flex-1 border-x border-secondary-lightestGray mr-8">
       <header className="p-4 sticky top-0 z-10 flex items-center justify-between bg-white/80 backdrop-blur-md">
         <h2 className="text-xl font-bold text-secondary-black">Home</h2>
         <div className="w-9 h-9 flex items-center justify-center rounded-full cursor-pointer hover:bg-secondary-extraLightGray">

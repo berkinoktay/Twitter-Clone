@@ -1,14 +1,7 @@
 import { useState } from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
 import CounterContainer from './CounterContainer';
-import {
-  ImageIcon,
-  GIFIcon,
-  PollIcon,
-  EmojiIcon,
-  ScheduleIcon,
-  PlusIcon,
-} from './icons';
+import { ImageIcon, GIFIcon, PollIcon, EmojiIcon, ScheduleIcon } from './icons';
 const TweetBox = () => {
   const [formText, setFormText] = useState('');
   const [counter, setCounter] = useState(0);
