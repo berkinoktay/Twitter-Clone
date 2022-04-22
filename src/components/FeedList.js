@@ -1,11 +1,12 @@
 import React from 'react';
 import FeedItem from './FeedItem';
 
-const FeedList = () => {
+const FeedList = ({ tweets }) => {
   return (
     <div>
-      <FeedItem />
-      <FeedItem />
+      {tweets.map((tweet, index) => (
+        <FeedItem key={index} {...tweet} />
+      ))}
     </div>
   );
 };

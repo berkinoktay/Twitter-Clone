@@ -1,16 +1,35 @@
 import { useState } from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+
+import db from '../firebase';
 import CounterContainer from './CounterContainer';
 import { ImageIcon, GIFIcon, PollIcon, EmojiIcon, ScheduleIcon } from './icons';
 const TweetBox = () => {
   const [formText, setFormText] = useState('');
   const [counter, setCounter] = useState(0);
 
+  const sendTweet = async () => {
+    if (formText !== '') {
+      try {
+        await addDoc(collection(db, 'tweet'), {
+          displayName: 'Berkin Oktay',
+          username: '@berkinoktayy',
+          formText,
+          timestamp: serverTimestamp(),
+          avatar:
+            'https://pbs.twimg.com/profile_images/1427250213908004867/2dIoFGth_400x400.jpg',
+        });
+        setFormText('');
+      } catch (e) {
+        console.error('Error adding document: ', e);
+      }
+    }
+  };
   const styleRing = () => {
     const characterLimit = 280;
     const characterLeft = characterLimit - counter;
     const r = characterLeft <= 20 ? 14 : 9;
-
     const circleLength = 2 * Math.PI * r;
     const colored = (circleLength * counter) / characterLimit;
     const gray = circleLength - colored;
@@ -58,6 +77,7 @@ const TweetBox = () => {
           <button
             className="px-4 py-2 ml-3 bg-primary-base text-white opacity-100 font-bold text-base  rounded-full hover:bg-primary-darken disabled:opacity-50 transform transition-colors duration-300"
             disabled={!formText}
+            onClick={sendTweet}
           >
             Tweet
           </button>
