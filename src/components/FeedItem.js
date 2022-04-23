@@ -1,15 +1,14 @@
 import React from 'react';
+import { formatDistanceToNowStrict } from 'date-fns';
 
 import { ReplyIcon, ReTweetIcon, LikeIcon, ShareIcon } from './icons';
-import ProfilePicture from '../img/profilePicture.jpeg';
-import BlowMind from '../img/blow-mind.gif';
-import { formatDistanceToNowStrict } from 'date-fns';
+
 const FeedItem = ({ displayName, username, formText, timestamp, avatar }) => {
   return (
     <div className="flex items-start py-3 px-4 cursor-pointer hover:bg-secondary-hoverGray ">
-      <a href="#/" className="relative mr-3">
-        <img src={avatar} alt="" className="w-12 h-12 rounded-full" />
-        <div className="w-12 h-12 rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 imgShadow transition-all duration-200 hover:imgBackground"></div>
+      <a href="#/" className="relative mr-3 w-12 h-12">
+        <img src={avatar} alt="" className="w-full h-full rounded-full" />
+        <div className="w-full h-full rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 imgShadow transition-all duration-200 hover:imgBackground"></div>
       </a>
 
       <div className="flex flex-1 flex-col items-start">

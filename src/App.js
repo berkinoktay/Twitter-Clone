@@ -5,11 +5,14 @@ import Messages from './components/pages/Messages';
 import Notifications from './components/pages/Notifications';
 import Profile from './components/pages/Profile';
 import Bookmarks from './components/pages/Bookmarks';
-
 import Sidebar from './components/Sidebar';
 import Trends from './components/Trends';
+
+import useWindowSize from './hooks/useWindowSize';
+import CONST from './constants';
 import { Routes, Route } from 'react-router-dom';
 function App() {
+  const size = useWindowSize();
   return (
     <div className="max-w-7xl mx-auto min-h-screen flex">
       <Sidebar />
@@ -22,7 +25,7 @@ function App() {
         <Route path="/lists" element={<Lists />} />
         <Route path="/profile" element={<Profile />} />
       </Routes>
-      <Trends />
+      {size.width >= CONST.TABLET_SIZE && <Trends />}
     </div>
   );
 }

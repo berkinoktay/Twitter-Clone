@@ -16,10 +16,10 @@ import {
   ProfileFillIcon,
 } from '../components/icons';
 
-// export default {
-//   TABLET_SIZE: 980,
-//   DESKTOP_SIZE: 1270,
-// };
+export default {
+  TABLET_SIZE: 988,
+  DESKTOP_SIZE: 1264,
+};
 
 export const MENU = [
   {

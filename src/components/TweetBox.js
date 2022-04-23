@@ -76,7 +76,7 @@ const TweetBox = () => {
           )}
           <button
             className="px-4 py-2 ml-3 bg-primary-base text-white opacity-100 font-bold text-base  rounded-full hover:bg-primary-darken disabled:opacity-50 transform transition-colors duration-300"
-            disabled={!formText}
+            disabled={!formText || styleRing().characterLeft <= 0}
             onClick={sendTweet}
           >
             Tweet
